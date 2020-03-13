@@ -1,0 +1,35 @@
+<div
+  class="modal fade modal-settings"
+  id="settingsModal"
+  tab-index="-1"
+  role="dialog"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <form method="POST" action="/delete" id="settingsForm">
+          <ul class="image-links">
+            {% for image in user.images %}
+            <li image-id="{{image.id}}">
+              <a class="link" href="/{{image.image_path}}"
+                >{{ image.image_path }}</a
+              >
+              <input type="checkbox" name="image" image-id="{{image.id}}" />
+            </li>
+            {% endfor %}
+          </ul>
+          <div class="text-center">
+            <input
+              type="submit"
+              class="btn btn-outline-primary btn-seagull"
+              value="Delete Selected"
+            />
+            <button class="btn btn-outline-primary btn-seagull toggle-all">
+              Select/Unselect All
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

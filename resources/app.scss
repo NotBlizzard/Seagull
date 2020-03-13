@@ -1,0 +1,92 @@
+@mixin button(
+  $color,
+  $firstTextColor,
+  $secondTextColor,
+  $ignoreBorder: false,
+  $whichBorder: null
+) {
+  //background-color: $color!important;
+  border-color: $color;
+  color: $firstTextColor;
+  text-decoration: none;
+
+  @if $ignoreBorder {
+    #{$whichBorder}: none;
+  }
+
+  &:hover,
+  &:active {
+    background-color: $color;
+    color: $secondTextColor;
+    border-color: $color;
+  }
+}
+
+@mixin grad() {
+  border-image: linear-gradient(
+      90deg,
+      rgba(151, 173, 196, 1) 0%,
+      rgba(8, 61, 119, 1) 50%,
+      rgba(25, 42, 61, 1) 100%
+    )
+    10;
+  border-width: 4px;
+  border-left: 0;
+  border-bottom: 0;
+  border-right: 0;
+}
+#seagullDropzone {
+  background-color: transparent;
+  border: 1px dashed #eee;
+  width: 40%;
+  color: #eee;
+}
+.logo {
+  font-size: 4rem;
+}
+.logo-image {
+  height: 10rem;
+  width: 10rem;
+}
+.dz-button {
+  background-color: transparent;
+  border: 0;
+  color: #eee;
+  font-size: 2rem;
+}
+.vertical-center {
+  min-height: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+.modal-content {
+  background-color: #385269;
+  border-radius: 0;
+}
+
+.form-control {
+  border-radius: 0;
+}
+body {
+  font-family: "Raleway", sans-serif;
+  color: #eee;
+  background-color: #020c16;
+}
+.btn {
+  border-radius: 0;
+}
+.btn-seagull {
+  @include button(#b7cce2, #eee, #222);
+}
+.btn-github {
+  @include button(#24292e, #eee, #eee);
+}
+.link,
+.link:hover {
+  text-decoration: underline;
+  color: #67dba5;
+  font-weight: bold;
+  font-size: 1rem;
+  text-decoration-color: #b7cce2;
+}

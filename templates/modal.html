@@ -1,0 +1,40 @@
+<div class="modal fade modal-{{type}}" id="{{id}}" tab-index="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <form action="/{{type}}" method="POST" id="{{type}}Form">
+          <h2 class="text-center">{{submitbutton}}</h2>
+          <div class="form-group">
+            <label>Username</label>
+            <input name="username" id="{{type}}Username" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input
+              name="password"
+              id="{{type}}Password"
+              class="form-control"
+              type="password"
+            />
+          </div>
+          {% if type == "register" %}
+          <div class="form-group">
+            <label>Email</label>
+            <input
+              name="email"
+              class="form-control"
+              id="{{type}}Email"
+              type="email"
+            />
+          </div>
+          {% endif %}
+          <button type="submit" class="btn btn-outline-primary btn-seagull">
+            {{submitbutton}}
+          </button>
+        </form>
+        <h4 class="text-center">{{submitbutton}} with another service</h4>
+        <a class="btn btn-outline-primary btn-github" href="/github">Github</a>
+      </div>
+    </div>
+  </div>
+</div>

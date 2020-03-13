@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "outDir": "./static",
+    "module": "commonjs",
+    "target": "es5",
+    "allowJs": true,
+    "strict": true,
+    "esModuleInterop": true
+  },
+  "files": ["./resources/app.ts"]
+}
